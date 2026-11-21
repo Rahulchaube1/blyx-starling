@@ -1,0 +1,14 @@
+use vendor::starling::starling;
+
+fn main() {
+    let starts = [0, 2, 4];
+    let ends = [4, 5, 7];
+    let capacity = 1.0;
+    let result = starling_capacity(starts, ends, capacity);
+    if len(result) == 0 { println!("invalid"); return; }
+    let mut i = 0;
+    while i < len(result) {
+        println!(at(result, i));
+        i += 1;
+    }
+}

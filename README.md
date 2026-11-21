@@ -1,10 +1,14 @@
-<img src="assets/logo.png" width="112" height="112" alt="Starling logo">
+<img src="assets/logo.png" width="112" height="112" alt="An emerald and violet starling shows pale spots and a yellow bill.">
 
 # Starling
 
 Estimate resource capacity and actual occupied time from a booking schedule. This Blyx workflow framework is part of the calendar, scheduling and local time collection.
 
 Summing all booking durations double-counts overlap. Measure occupied time separately from peak resource demand. [PostgreSQL, range types](https://www.postgresql.org/docs/current/rangetypes.html)
+
+## Editor extension
+
+Install **RahulChaube.blyx-starling** to run the worked example and use the framework’s function completions in a Blyx file. Open an empty `.blyx` file, enter `blyx-starling-demo`, then choose **Blyx: Run File**. [Editor downloads](https://www.blyx-lang.space/packages/starling#editor) · [Download the extension](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-starling-0.1.0.vsix) · [Starter with framework source](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-starling-starter-0.1.0.zip)
 
 ## Install and run
 
@@ -82,7 +86,7 @@ This release includes identical copies of both library modules so a tagged clone
 
 ## Verification and contributions
 
-The regression suite in [tests.blyx](tests.blyx) checks the example, boundary cases and invalid inputs. Include a short reproducer and your compiler version in [an issue](https://github.com/Rahulchaube1/blyx-starling/issues). The source is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). The package artwork uses [Lucide icons](https://lucide.dev/license); see [artwork notices](assets/NOTICE.txt).
+The regression suite in [tests.blyx](tests.blyx) checks the example, boundary cases and invalid inputs. Include a short reproducer and your compiler version in [an issue](https://github.com/Rahulchaube1/blyx-starling/issues). The source is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). The [artwork notice](assets/NOTICE.txt) records credits for earlier editions.
 
 ## Connect with Rahul Chaube
 

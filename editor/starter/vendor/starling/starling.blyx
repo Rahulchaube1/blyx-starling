@@ -1,0 +1,53 @@
+use intervalunion;
+use peakslots;
+
+fn starling_max2(a: f64, b: f64) -> f64 {
+    if a > b {
+        return a;
+    }
+    b
+}
+
+fn starling_finite(values: vector) -> bool {
+    let mut i = 0;
+    while i < len(values) {
+        let value = at(values, i);
+        if !(value - value == 0.0) {
+            return false;
+        }
+        i += 1;
+    }
+    true
+}
+
+fn starling_integers(values: vector) -> bool {
+    let mut i = 0;
+    while i < len(values) {
+        let value = at(values, i);
+        if !(value >= -9007199254740991.0 && value <= 9007199254740991.0 && value % 1.0 == 0.0) {
+            return false;
+        }
+        i += 1;
+    }
+    true
+}
+
+fn starling_compute(starts: vector, ends: vector, capacity: f64) -> vector {
+    let union = intervalunion_measure(starts, ends);
+    let peak = peakslots_overlap(starts, ends);
+    if len(union) == 0 || len(peak) == 0 {
+        return [];
+    }
+    [at(union, 0), at(peak, 0), at(peak, 1), starling_max2(0.0, at(peak, 0) - capacity)]
+}
+
+// Estimate resource capacity and actual occupied time from a booking schedule.
+// Returns [covered ticks, peak simultaneous bookings, earliest peak, capacity shortfall]. Starts must be sorted; adjacent bookings can share a resource.
+pub fn starling_capacity(starts: vector, ends: vector, capacity: f64) -> vector {
+    if !starling_integers(starts) { return []; }
+    if !starling_integers(ends) { return []; }
+    if !(capacity >= 1.0 && capacity <= 9007199254740991.0 && capacity % 1.0 == 0.0) { return []; }
+    let result = starling_compute(starts, ends, capacity);
+    if !starling_finite(result) { return []; }
+    result
+}

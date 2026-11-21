@@ -1,0 +1,57 @@
+{
+  "name": "blyx-starling",
+  "displayName": "Blyx Starling",
+  "description": "Estimate resource capacity and actual occupied time from a booking schedule.",
+  "version": "0.1.0",
+  "publisher": "RahulChaube",
+  "license": "(MIT OR Apache-2.0)",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "blyx",
+    "starling",
+    "framework"
+  ],
+  "homepage": "https://www.blyx-lang.space/packages/starling",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rahulchaube1/blyx-starling.git",
+    "directory": "editor"
+  },
+  "bugs": {
+    "url": "https://github.com/Rahulchaube1/blyx-starling/issues"
+  },
+  "extensionDependencies": [
+    "RahulChaube.blyx-language"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "blyx",
+        "path": "./snippets/framework.json"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "starling.start",
+        "title": "Get started with Starling",
+        "description": "Estimate resource capacity and actual occupied time from a booking schedule.",
+        "steps": [
+          {
+            "id": "run",
+            "title": "Run the Starling example",
+            "description": "Create an empty .blyx file, insert blyx-starling-demo and choose **Blyx: Run File**.\n[Open the documentation](https://www.blyx-lang.space/packages/starling)",
+            "media": {
+              "markdown": "walkthrough.md"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
